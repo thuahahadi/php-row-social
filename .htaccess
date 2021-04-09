@@ -1,0 +1,78 @@
+RewriteEngine On
+
+RewriteRule ^home/?$ gau_geram.php
+RewriteRule ^signup/?$ dukitam.php
+RewriteRule ^success/?$ oegasayge.php
+RewriteRule ^404/?$ khajuarne.php
+RewriteRule ^member/login.xml?$ hsd/dukitam.php
+RewriteRule ^addnew/success.xml?$ hsd/harao.php
+RewriteRule ^addnew/board.xml?$ gaour_basko.php
+RewriteRule ^addnew/shop.xml?$ dukanodukao.php
+
+RewriteRule ^addnew/nice.xml?$ hsd/guta.php
+
+RewriteRule ^dislike/([0-9]+)?$ hsd/karaf.php?id=$1
+RewriteRule ^post/delete/([0-9]+)?$ hsd/board_kato.php?id=$1
+RewriteRule ^post/delete/feedback/([0-9]+)?$ hsd/coment_kato.php?id=$1
+RewriteRule ^addnew/comment.xml?$ gaur_board_mattam.php
+RewriteRule ^user/([0-9a-zA-Z-.-_--]+)?$ gau_forisoa.php?id=$1
+RewriteRule ^tracker/list/addnew/([0-9a-zA-Z-.-_--]+)?$ hsd/rasta_add_koro.php?id=$1
+RewriteRule ^view/all/track/request/?$ gau_murobbi.php
+RewriteRule ^accept/([0-9]+)&uid=([0-9a-zA-Z-.-_--]+)?$ hsd/murobbi_jukto.php?id=$1&uid=$2
+RewriteRule ^update/picture/([0-9a-zA-Z-.-_--]+)?$ gau_fudu_bodlao.php?id=$1
+RewriteRule ^update/info/([0-9a-zA-Z-.-_--]+)?$ gau_voter_bodlao.php?id=$1
+RewriteRule ^switch/([0-9a-zA-Z-.-_--]+)?$ hsd/gau_basko_dekao.php?id=$1
+RewriteRule ^profile/view/about/([0-9a-zA-Z-.-_--]+)?$ gau_dolil.php?id=$1
+RewriteRule ^view/all/track/?$ gau_sokolmanush.php
+RewriteRule ^user/([0-9a-zA-Z-.-_--]+)&([0-9]+)?$ gau_forisoa.php?id=$1&page=$1
+RewriteRule ^messages/?$ gau_barta.php
+
+RewriteRule ^addnew/message.xml?$ send.php
+RewriteRule ^shop/?$ dukan_index.php
+RewriteRule ^shop/view/([0-9]+)?$ dukan_fullview.php?id=$1
+RewriteRule ^post/delete/shop/([0-9]+)?$ hsd/dukan_kato.php?id=$1
+RewriteRule ^shop/mypost/?$ gau_dukan.php
+RewriteRule ^shop/tracker/([0-9a-zA-Z-.-_--]+)?$ dukan_tracker_fullview.php?id=$1
+RewriteRule ^view/story/([0-9]+)?$ gau_fullstory.php?id=$1
+RewriteRule ^view/hit/story/([0-9]+)?$ gau_hit.php?id=$1
+RewriteRule ^feedback/replay/([0-9]+)?$ gau_subcomment.php?id=$1
+RewriteRule ^addnew/comment/answer.xml?$ hsd/gaur_board_mator_uttor.php
+RewriteRule ^post/delete/feedback/sub/([0-9]+)?$ hsd/subcomment_kato.php?id=$1
+RewriteRule ^post/edit/([0-9]+)?$ gau_fullstory_edit.php?id=$1
+RewriteRule ^update/board.xml?$ hsd/gaour_board_update.php
+RewriteRule ^post/edit/feedback/([0-9]+)?$ gau_subcomment_edit.php?id=$1
+RewriteRule ^answer/update.xml?$ hsd/gaur_comment_update.php
+RewriteRule ^notified/?$ gau_bigopti.php
+RewriteRule ^addnew/edit/bio.xml?$ hsd/gau_baktigoto_bodlani_bio.php
+RewriteRule ^addnew/edit/present/address.xml?$ hsd/gau_baktigoto_bodlani_present_address.php
+RewriteRule ^addnew/edit/home/address.xml?$ hsd/gau_baktigoto_bodlani_home_address.php
+RewriteRule ^addnew/edit/cont/work/contact.xml?$ hsd/gau_baktigoto_bodlani_contact.php
+RewriteRule ^addnew/edit/cont/work/edu.xml?$ hsd/gau_baktigoto_bodlani_edu_work.php
+RewriteRule ^tracker/list/out/([0-9]+)?$ hsd/ustamaribakor.php?id=$1
+RewriteRule ^update/banner/([0-9a-zA-Z-.-_--]+)?$ gau_fustar_bodlao.php?id=$1
+
+RewriteRule ^view/message/([0-9a-zA-Z-.-_--]+)&idb=([0-9a-zA-Z-.-_]+)?$ gau_kobutor.php?ida=$1&idb=$2
+RewriteRule ^message/delete/([0-9]+)?$ hsd/kobutor_kato.php?id=$1
+
+RewriteRule ^search/search/?$ kujaiyar_gau.php
+RewriteRule ^startags/([0-9a-zA-Z-.-_]+)?$ kujaiyar_star_tag.php?query=$1
+RewriteRule ^search/post/location/([0-9a-zA-Z-.-_--]+)?$ kujaiyar_location.php?query=$1
+
+RewriteRule ^recover/account/password/?$ notun_password.php
+
+RewriteRule ^recover/account/password/submit.xml?$ hsd/password_bodlani.php
+
+RewriteRule ^gameclub/?$ gau_game_club.php
+
+
+
+
+
+
+
+
+
+
+
+
+
