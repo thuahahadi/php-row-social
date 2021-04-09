@@ -1,0 +1,135 @@
+<?php include 'bin/access/social/header.php';?> 
+
+
+
+<div class="row-offcanvas row-offcanvas-left">
+ 
+ 
+
+
+
+
+ <div class="row">
+              <div class="col-md-12">
+              
+         <div class="row">
+              <div class="col-md-10">
+              <div class="tracker_list">
+
+
+<div class="Right_h" align="center"><b>Change Cover Image</b></div><hr/>
+
+<div align="center">
+             
+             
+<?php
+include('hsd/dibba_laga.php');
+
+
+
+
+
+	if (!isset($_FILES['image']['tmp_name'])) {
+	echo "";
+	}else{
+	$file=$_FILES['image']['tmp_name'];
+	$image= addslashes(file_get_contents($_FILES['image']['tmp_name']));
+	$image_name= addslashes($_FILES['image']['name']);
+	$image_size= getimagesize($_FILES['image']['tmp_name']);
+
+	
+		if ($image_size==FALSE) {
+		
+			echo "That's not an image!";
+			
+		}else{
+			
+			move_uploaded_file($_FILES["image"]["tmp_name"],"bin/access/images/member/cover/" . $_FILES["image"]["name"]);
+			
+			$location="bin/access/images/member/cover/" . $_FILES["image"]["name"];
+			$roomid=$_POST['firstname'];
+			
+			if(!$update=mysql_query("UPDATE members SET coverphoto = '$location' WHERE user='$roomid'")) {
+			
+				echo mysql_error();
+				
+				
+			}
+			else{?>
+			
+			<script>
+		alert('successfully uploaded');
+        window.location.href='http://localhost/social/messages/';
+        </script><?php
+			exit();
+			}
+			}
+	}
+
+
+?>
+
+
+
+
+
+<?php
+				  if (isset($_GET['id']))
+	{
+	include('hsd/dibba_laga.php');
+		
+		$id=$_GET['id'];
+		$result = mysql_query("SELECT * FROM members WHERE user = '$id'");
+
+while($row = mysql_fetch_array($result))
+  {
+  echo '<img alt="Unable to View" class="responsive img-thumbnail" src="http://localhost/social/' . $row["coverphoto"] . '">';
+  }
+        ?>
+	<form action="" method="post" enctype="multipart/form-data">
+	
+	
+	<br>
+			<input type="hidden" name="firstname" value="<?php echo $_GET['id'];?>">
+			
+			<br>
+			<input type="file" name="image"><br>
+			
+			<div class="container-login100-form-btn">
+						<div class="wrap-login100-form-btn">
+							<div class="login100-form-bgbtn"></div>
+							<button class="login100-form-btn">
+								Change Banner
+							</button>
+						</div>
+					</div>
+            </form>
+            <?php
+	
+			}
+			?>
+	          <br/>
+            </div>
+			
+  </div>
+              
+              </div>
+              <div class="col-md-2"></div>
+              
+          </div>     
+              
+              
+              </div>
+              
+          </div>
+          
+          
+          
+          
+          
+          
+          
+          
+
+<?php include 'bin/access/social/chat-bar.php';?>
+<?php include 'bin/access/index/footer.php';?> 
